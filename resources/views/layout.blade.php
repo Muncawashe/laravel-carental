@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @vite('resources/css/app.css')
 
-        <title>@yield('title', 'Car Rentals')</title>
+        <title>@yield('title')</title>
     </head>
 
 <body class="bg-gray-100">
@@ -13,21 +13,24 @@
         <a href="/" class="navbar-brand text-white font-semibold text-xl">Car Rentals</a>
         <ul class="navbar-nav flex space-x-4">
             <li class="nav-item">
-                <a href="route{{ '' }}" class="nav-link text-blue-200 hover:text-white">Vehicles</a>
+                <a href="{{ route('cars.vehicles') }}" class="nav-link text-blue-200 hover:text-white">Vehicles</a>
             </li>
             <li class="nav-item">
-                <a href="/pricing" class="nav-link text-blue-200 hover:text-white">Pricing</a>
+                <a href="{{ route('home.services') }}" class="nav-link text-blue-200 hover:text-white">Services</a>
             </li>
             <li class="nav-item">
-                <a href="/locations" class="nav-link text-blue-200 hover:text-white">Locations</a>
+                <a href="{{ route('cars.vehicles') }}" class="nav-link text-blue-200 hover:text-white">Locations</a>
             </li>
             <li class="nav-item">
-                <a href="/contact" class="nav-link text-blue-200 hover:text-white">Contact</a>
+                <a href="{{ route('home.contact') }}" class="nav-link text-blue-200 hover:text-white">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('home.contact') }}" class="nav-link text-blue-200 hover:text-white">Catalogue</a>
             </li>
         </ul>
     </nav>
 
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto">
         @yield('content')
     </div>
 
@@ -45,7 +48,7 @@
         </div>
         <p>© {{ date('Y') }} Car Rentals. All rights reserved.</p>
     </footer> --}}
-    
+
 </body>
 </html>
 

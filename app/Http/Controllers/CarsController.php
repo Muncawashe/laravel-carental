@@ -3,16 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Car;
+use App\Http\Requests\CarFormRequest;
 
-class PostsController extends Controller
+class CarsController extends Controller
 {
+
+    private static function getData() {
+        return [
+            ['id' => 1, 'make' => 'American Standard Strat', 'model' => 'Fender' , 'fuelpkm' => 5],
+            ['id' => 2, 'make' => 'Starla S2', 'model' => 'PRS' , 'fuelpkm' => 5],
+            ['id' => 3, 'make' => 'Explorer', 'model' => 'Gibson' , 'fuelpkm' => 5],
+            ['id' => 4, 'make' => 'Talman', 'model' => 'Ibanez' , 'fuelpkm' => 5],
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-        return view('/extras/forum');
+
+        return view('cars.index', [
+            'cars' => Car::all(),
+            //t update'cars' => self::getData(),
+            'userInput' => '<script>alert("hello")</script>'
+        ]);
     }
 
     /**
@@ -20,23 +36,29 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CarFormRequest  $request)
     {
-        //
+        $data = $request->validated();
+
+        Car::create($data);
+
+        return redirect()->route('cars.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($car)
     {
-        //
+        return view('cars.show', [
+            'car' => $car
+        ]);
     }
 
     /**

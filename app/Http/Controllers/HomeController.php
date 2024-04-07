@@ -13,9 +13,19 @@ class HomeController extends Controller
     public function register(){
         return view('auth.register');
     }
-    
+
     public function login(){
         return view('auth.login');
     }
-    
+
+    public function contact(){
+        return view('contact');
+    }
+    public function vehicles(){
+        return view('vehicles');
+    }
+
+    public function services(){
+        return view('services');
+    }
 }
