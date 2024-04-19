@@ -26,8 +26,6 @@ class CarsController extends Controller
 
         return view('cars.index', [
             'cars' => Car::all(),
-            //t update'cars' => self::getData(),
-            'userInput' => '<script>alert("hello")</script>'
         ]);
     }
 
@@ -54,7 +52,7 @@ class CarsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($car)
+    public function show(Car $car)
     {
         return view('cars.show', [
             'car' => $car

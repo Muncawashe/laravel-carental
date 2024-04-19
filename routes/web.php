@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\BookingsController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/login', [HomeController::class, 'login'])->name('home.login');
@@ -13,3 +14,4 @@ Route::get('/services', [HomeController::class, 'services'])->name('home.service
 
 // Form Routes
 Route::resource('/cars', CarsController::class);
+Route::resource('/bookings', BookingsController::class);

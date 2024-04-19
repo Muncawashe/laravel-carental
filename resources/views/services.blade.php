@@ -8,7 +8,7 @@
                 <div class="flex">
                     <h1>Shuttle Services</h1>
                 </div>
-                <div class="flex invisible hover:visible">
+                <div class="flex">
                     <p>Best for groups, we offer shuttle services between any destination.</p>
                 </div>
             </div>

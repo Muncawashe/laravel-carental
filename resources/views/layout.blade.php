@@ -13,7 +13,7 @@
         <a href="/" class="navbar-brand text-white font-semibold text-xl">Car Rentals</a>
         <ul class="navbar-nav flex space-x-4">
             <li class="nav-item">
-                <a href="{{ route('cars.vehicles') }}" class="nav-link text-blue-200 hover:text-white">Vehicles</a>
+                <a href="{{ route('cars.index') }}" class="nav-link text-blue-200 hover:text-white">Vehicles</a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('home.services') }}" class="nav-link text-blue-200 hover:text-white">Services</a>
@@ -25,7 +25,7 @@
                 <a href="{{ route('home.contact') }}" class="nav-link text-blue-200 hover:text-white">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('home.contact') }}" class="nav-link text-blue-200 hover:text-white">Catalogue</a>
+                <a href="{{ route('bookings.index') }}" class="nav-link text-blue-200 hover:text-white">Bookings</a>
             </li>
         </ul>
     </nav>

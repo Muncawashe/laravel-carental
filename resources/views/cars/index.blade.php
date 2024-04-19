@@ -2,7 +2,7 @@
 @section('title', 'Vehicles')
 @section('content')
     <div class="flex space-x-2">
-        <div class="flex-col w-1/4 bg-red-500 p-4">
+        <div class="flex-col w-1/4 bg-grey-800 p-4">
             <div class="flex-col space-y-4">
                 <h1 class="font-bold text-2xl">Search // Filter</h1>
                 <form>
@@ -56,9 +56,9 @@
                 </ul>
             </div>
         </div>
-        <div class="flex-col w-3/4 bg-blue-500 p-2">
+        <div class="flex-col w-3/4 bg-white p-2">
             <div class="container mt-8 flex items-center justify-center">
-                <h1 class="font-bold text-teal-500 text-5xl">Products</h1>
+                <h1 class="font-bold text-teal-500 text-5xl">Cars Available</h1>
 
             </div>
 
@@ -68,21 +68,21 @@
                         @foreach ($cars as $car)
                         <a href="{{ route('cars.show', ['car' => $car['id']])}}">
                             <div class="p-2 rounded-md flex flex-col items-center hover:bg-teal-500">
-                                <img class="w-3/5" src="./images/suzuki.png">
+                                <img src="/storage/{{$car->image}}">
                                 <div class="flex">
-                                    <h1>{{ $car['make'] }}</h1>
+                                    <h1 class="font-bold text-xl">{{ $car['make'] }}</h1>
                                 </div>
                                 <div class="flex">
                                     <h1>{{ $car['model'] }}</h1>
                                 </div>
                                 <div class="flex">
-                                    <h1>{{ $car['fuelpkm'], 'liters per kilometer' }}</h1>
+                                    <h1>{{ $car['fuelpkm'] }}</h1>
                                 </div>
                             </div>
                         </a>
                         @endforeach
                     @else
-                        <h2>There are no guitars to display</h2>
+                        <h2 class="text-gray-5">There are no cars to display</h2>
                     @endif
 
 
