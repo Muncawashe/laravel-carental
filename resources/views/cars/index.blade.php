@@ -67,7 +67,7 @@
                     @if (is_countable($cars) && count($cars) > 0)
                         @foreach ($cars as $car)
                         <a href="{{ route('cars.show', ['car' => $car['id']])}}">
-                            <div class="p-2 rounded-md flex flex-col items-center hover:bg-teal-500">
+                            <div class="p-2 rounded-md flex flex-col items-center hover:bg-slate-100">
                                 <img src="/storage/{{$car->image}}">
                                 <div class="flex">
                                     <h1 class="font-bold text-xl">{{ $car['make'] }}</h1>

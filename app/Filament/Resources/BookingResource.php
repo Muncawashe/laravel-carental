@@ -34,7 +34,7 @@ class BookingResource extends Resource
                 Tables\Columns\TextColumn::make('make'),
                 Tables\Columns\TextColumn::make('model'),
                 Tables\Columns\TextColumn::make('collection'),
-                Tables\Columns\ImageColumn::make('phone'),
+                Tables\Columns\TextColumn::make('phone'),
             ])
             ->filters([
                 //

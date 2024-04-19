@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookingFormRequest;
 
 class BookingsController extends Controller
 {
@@ -28,9 +29,14 @@ class BookingsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BookingFormRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Booking::create($data);
+
+        // return redirect()->route('bookings.index');
+        return back()->with('success', 'Booking Successfull!!');
     }
 
     /**
